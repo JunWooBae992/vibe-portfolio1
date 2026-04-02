@@ -546,50 +546,145 @@ section {
     background: white;
 }
 
+/* 경험 및 커리어 섹션 - 세로형 타임라인 */
 .experience-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 4rem auto;
+    position: relative;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 중앙 수직선 */
+.experience-line {
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, #2563eb, #60a5fa);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    z-index: 0;
 }
 
 .experience-item {
-    background: #f8f9fa;
+    width: 45%;
+    margin-bottom: 3rem;
+    position: relative;
+    background: white;
     padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-    border-left: 4px solid #2563eb;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #e2e8f0;
+    z-index: 1;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+/* 왼쪽 항목 */
+.experience-item:nth-child(odd) {
+    align-self: flex-start;
+}
+
+/* 오른쪽 항목 */
+.experience-item:nth-child(even) {
+    align-self: flex-end;
+}
+
+/* 타임라인 원형 마커 */
+.experience-item::after {
+    content: attr(data-number);
+    position: absolute;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px #2563eb;
+    z-index: 2;
+}
+
+/* 왼쪽 항목 마커 위치 (중앙선 쪽으로) */
+.experience-item:nth-child(odd)::after {
+    right: -11.1%;
+}
+
+/* 오른쪽 항목 마커 위치 (중앙선 쪽으로) */
+.experience-item:nth-child(even)::after {
+    left: -11.1%;
 }
 
 .experience-item h3 {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #1e293b;
     margin-bottom: 0.5rem;
 }
 
 .experience-period {
-    color: #64748b;
-    font-weight: 500;
-    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #eff6ff;
+    color: #2563eb;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
 .experience-item ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
 .experience-item li {
     position: relative;
     padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .experience-item li::before {
-    content: '▸';
+    content: '●';
     position: absolute;
     left: 0;
     color: #2563eb;
-    font-weight: bold;
+    font-size: 0.6rem;
+    top: 0.2rem;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .experience-content::after {
+        left: 30px;
+    }
+
+    .experience-item {
+        width: calc(100% - 60px);
+        float: right !important;
+        margin-left: 60px;
+        margin-top: 0 !important;
+        margin-bottom: 2rem;
+    }
+
+    .experience-item::after {
+        left: -45px !important;
+        top: 20px;
+    }
 }
 
 /* 학습 로그 섹션 */
@@ -740,6 +835,32 @@ section {
 
     .hero-stats .stat {
         padding: 1rem;
+    }
+
+    .experience-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .experience-item {
+        padding: 1.5rem;
+        padding-left: 3rem;
+    }
+
+    .experience-item::before {
+        top: 1.5rem;
+        bottom: 1.5rem;
+    }
+
+    .experience-item h3 {
+        padding-left: 1.5rem;
+    }
+
+    .experience-item h3::before {
+        left: -2rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.75rem;
     }
 
     .about-stats {
