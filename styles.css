@@ -32,11 +32,14 @@ body {
 
 .nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.nav-brand {
+    margin-right: auto;
 }
 
 .nav-brand h1 {
@@ -127,6 +130,45 @@ body {
     opacity: 0.9;
 }
 
+.hero-description {
+    margin: 2rem 0;
+}
+
+.hero-description p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hero-stats .stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-stats .stat h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+}
+
+.hero-stats .stat p {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    margin: 0;
+}
+
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -188,7 +230,6 @@ body {
     font-size: 5rem;
     border: 4px solid rgba(255, 255, 255, 0.3);
 }
-
 /* 섹션 공통 스타일 */
 section {
     padding: 80px 0;
@@ -683,10 +724,22 @@ section {
         font-size: 3rem;
     }
 
-    .about-content {
+    .hero-description {
+        margin: 1.5rem 0;
+    }
+
+    .hero-description p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-stats {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero-stats .stat {
+        padding: 1rem;
     }
 
     .about-stats {
