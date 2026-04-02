@@ -500,6 +500,133 @@ section {
     min-height: 120px;
 }
 
+/* 경험 및 교육 섹션 */
+.experience {
+    background: white;
+}
+
+.experience-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience-item {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #2563eb;
+}
+
+.experience-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.experience-period {
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.experience-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-item li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #475569;
+}
+
+.experience-item li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* 학습 로그 섹션 */
+.learning {
+    background: #f8f9fa;
+}
+
+.learning-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.learning-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.learning-item:hover {
+    transform: translateY(-5px);
+}
+
+.learning-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.learning-item p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* 프로젝트 상세 설명 */
+.project-description,
+.project-achievements {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.project-description h4,
+.project-achievements h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+
+.project-description ul,
+.project-achievements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-description li,
+.project-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.project-description li::before,
+.project-achievements li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: bold;
+}
 /* 푸터 */
 .footer {
     background: #1e293b;
@@ -582,6 +709,23 @@ section {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .experience-content {
+        padding: 0 1rem;
+    }
+
+    .experience-item {
+        padding: 1.5rem;
+    }
+
+    .learning-content {
+        grid-template-columns: 1fr;
+    }
+
+    .project-description,
+    .project-achievements {
+        padding: 0.75rem;
     }
 
     .hero-buttons {
